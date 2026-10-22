@@ -118,11 +118,20 @@ with tab1:
     else:
         st.info("No player data found for this combination.")
 
-# ==============================================================================
+    # --- NEW SUBTLE EXPLANATION FOOTER ---
+        st.caption("---")
+        st.caption("💡 **What is the Matchup Multiplier?**")
+        st.caption(
+            "The **Matchup Multiplier** compares an opposing defense's allowed PPR points against the league baseline for that position.\n\n"
+            "• **1.00** = League Average\n"
+            "• **> 1.00** = Favorable Matchup\n"
+            "• **< 1.00** = Tough Matchup"
+        )
+#=====================================================================
 # TAB 2: NEW WAIVER WIRE & SLEEPER FINDER (SEPARATED)
 # ==============================================================================
 with tab2:
-    st.header("🎯 Undervalued & Sleeper Target Finder")
+    st.header("🎯 Undervalued / Sleeper Target Finder")
     st.write("Find players with high underlying workload volume or favorable matchup spikes.")
 
     filter_pos = st.radio("Filter Position View", ['ALL', 'WR', 'RB', 'TE'], horizontal=True)
