@@ -131,7 +131,7 @@ with tab1:
 # TAB 2: NEW WAIVER WIRE & SLEEPER FINDER (SEPARATED)
 # ==============================================================================
 with tab2:
-    st.header("🎯 Undervalued / Sleeper Target Finder")
+    st.header("Undervalued / Sleeper Target Finder")
     st.write("Find players with high underlying workload volume or favorable matchup spikes.")
 
     filter_pos = st.radio("Filter Position View", ['ALL', 'WR', 'RB', 'TE'], horizontal=True)
@@ -143,7 +143,7 @@ with tab2:
     st.markdown("---")
     
     # SECTION A: Sneaky High-Volume Earners
-    st.subheader("🔥 Volume Earners Rankings (High Opportunity)")
+    st.subheader("🎯 Volume Earners Rankings (High Opportunity)")
     st.caption("Players averaging 5+ targets or 10+ carries per game across the league.")
 
     high_vol = data_scope[(data_scope['avg_targets'] >= 5.0) | (data_scope['avg_carries'] >= 10.0)].copy()
