@@ -2,7 +2,7 @@ import nflreadpy as nfl
 import pandas as pd
 import streamlit as st
 
-st.title("🏈 Custom Fantasy Football Matchup & Waiver Tool")
+st.title("🏈 GridIQ Fantasy Football Matchup & Waiver Tool")
 st.write("Compare player usage, opponent defenses, and weekly projections.")
 
 @st.cache_data
@@ -40,7 +40,7 @@ player_baselines = df.groupby(['player_name', 'position', 'team']).agg(
 player_baselines = player_baselines[player_baselines['games_played'] >= 1].copy()
 
 # CREATE NAVIGATION TABS AT THE TOP
-tab1, tab2 = st.tabs(["📊 Main Matchup Analyzer", "🚀 Waiver Wire & Sleeper Finder"])
+tab1, tab2 = st.tabs(["📊 Positional Matchup Analyzer", "🚀 Value & Sleeper Finder"])
 
 # ==============================================================================
 # TAB 1: EXACT ORIGINAL MATCHUP ANALYZER (UNCHANGED)
@@ -134,7 +134,7 @@ with tab2:
     st.markdown("---")
     
     # SECTION A: Sneaky High-Volume Earners
-    st.subheader("🔥 Sneaky Volume Earners (High Opportunity)")
+    st.subheader("🔥 Volume Earners Rankings (High Opportunity)")
     st.caption("Players averaging 5+ targets or 10+ carries per game across the league.")
 
     high_vol = data_scope[(data_scope['avg_targets'] >= 5.0) | (data_scope['avg_carries'] >= 10.0)].copy()
