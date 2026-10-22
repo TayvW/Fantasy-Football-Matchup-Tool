@@ -112,9 +112,9 @@ with tab1:
         st.dataframe(display_df, use_container_width=True)
         
         if multiplier > 1.1:
-            st.success(f"🟢 **Favorable Matchup!** The {selected_opponent} allow +{int((multiplier-1)*100)}% more points than average to {selected_position}s.")
+            st.success(f"🟢 **Favorable Matchup!** {selected_opponent} allows +{int((multiplier-1)*100)}% more points than average to {selected_position}s.")
         elif multiplier < 0.9:
-            st.warning(f"🔴 **Tough Matchup!** The {selected_opponent} lock down opposing {selected_position}s (-{int((1-multiplier)*100)}%).")
+            st.warning(f"🔴 **Tough Matchup!** {selected_opponent} locks down opposing {selected_position}s (-{int((1-multiplier)*100)}%).")
     else:
         st.info("No player data found for this combination.")
 
